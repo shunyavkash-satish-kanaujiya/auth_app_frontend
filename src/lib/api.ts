@@ -1,10 +1,10 @@
 const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1').replace(/\/$/, '');
 
 export type User = {
-  id: string;
   fullName: string;
   username: string;
-  createdAt: string;
+  id?: string;
+  createdAt?: string;
 };
 
 type ApiResponse<T> = {
@@ -64,7 +64,7 @@ export const authApi = {
       body: JSON.stringify(input),
     }),
 
-  me: () => request<{ user: User }>('/auth/me'),
+  dashboard: () => request<{ fullName: string; username: string }>('/dashboard'),
 
   logout: () =>
     request<undefined>('/auth/logout', {

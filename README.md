@@ -24,4 +24,4 @@ The default API URL is `http://localhost:8000/api/v1`. Override it with `VITE_AP
 
 ## v1 flow
 
-Registration creates the account, establishes the cookie session, and redirects directly to `/welcome`. Login also establishes the cookie session and redirects to `/welcome`. The welcome page is protected and displays the current user's name from `/api/v1/auth/me`.
+Registration creates the account, establishes the cookie session, and redirects directly to `/welcome`. Login also establishes the cookie session and redirects to `/welcome`. The protected welcome page bootstraps the current user's name from `/api/v1/dashboard`.
